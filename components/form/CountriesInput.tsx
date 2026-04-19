@@ -7,6 +7,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import ReactCountryFlag from "react-country-flag";
 
 const name = "country";
 
@@ -29,7 +30,8 @@ function CountriesInput({ defaultValue }: { defaultValue?: string }) {
             return (
               <SelectItem key={item.code} value={item.code}>
                 <span className="flex items-center gap-2">
-                  {item.flag} {item.name}
+                  <ReactCountryFlag countryCode={item.code} svg />
+                  {item.name}
                 </span>
               </SelectItem>
             );
