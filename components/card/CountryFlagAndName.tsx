@@ -8,9 +8,9 @@ function CountryFlagAndName({ countryCode }: { countryCode: string }) {
       ? `${validCountry!.name.substring(0, 20)}...`
       : validCountry!.name;
   return (
-    <span className="flex justify-between items-center gap-2 text-sm">
+    <span className="flex justify-start items-center gap-2 text-sm">
       <ReactCountryFlag countryCode={countryCode} svg />
-      {validCountry?.flag} {countryName}
+      {countryName}
     </span>
   );
 }
