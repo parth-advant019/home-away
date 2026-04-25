@@ -11,6 +11,7 @@ export const GET = async (req: NextRequest) => {
   const session_id = searchParams.get("session_id") as string;
 
   try {
+    //Asks Stripe's server "was this payment actually completed?" — you never trust the URL
     const session = await stripe.checkout.sessions.retrieve(session_id);
     const bookingId = session.metadata?.bookingId;
 

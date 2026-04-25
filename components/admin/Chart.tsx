@@ -25,7 +25,13 @@ function Chart({ data }: ChartPropsType) {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" />
           <YAxis allowDecimals={false} />
-          <Tooltip />
+          <Tooltip
+            contentStyle={{
+              background: "hsl(var(--background))",
+              color: "hsl(var(--foreground))",
+              border: "1px solid hsl(var(--border))",
+            }}
+          />
           <Bar dataKey="count" fill="#F97215" barSize={75} />
         </BarChart>
       </ResponsiveContainer>
